@@ -1,4 +1,3 @@
-```markdown
 # Koa TS CRUD Server
 
 A simple RESTful API built using Koa and TypeScript for managing books.
@@ -10,8 +9,8 @@ A simple RESTful API built using Koa and TypeScript for managing books.
 - Middleware support using Koa.
 
 ## Project Structure
-```
 
+```
 src/
 │
 ├── models/
@@ -21,23 +20,21 @@ src/
 │ └── bookRoutes.ts # Contains the routes for CRUD operations on books.
 │
 └── server.ts # The main server file to start the Koa application.
-
 ```
 
 ## Setup
 
 1. **Install Dependencies**
-```
 
+```
 npm install
 
 ```
 
 2. **Run the server**
+
 ```
-
 npm start
-
 ```
 
 This will start the server on `http://localhost:3000`.
@@ -45,27 +42,25 @@ This will start the server on `http://localhost:3000`.
 ## API Endpoints
 
 - **Get all books**
+
 ```
-
 GET /books
-
 ```
 
 - **Get a specific book by ID**
+
 ```
-
 GET /books/:id
-
 ```
 
 - **Add a new book**
+
+```
+POST /books
 ```
 
-POST /books
-
-````
-
 Body example:
+
 ```json
 {
   "id": 6,
@@ -74,7 +69,7 @@ Body example:
   "genre": "Genre",
   "publishedYear": 2023
 }
-````
+```
 
 - **Update a book by ID**
 
