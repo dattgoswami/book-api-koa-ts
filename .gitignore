@@ -1,0 +1,33 @@
+# Node.js related
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# TypeScript related
+dist/
+*.tsbuildinfo
+*.log
+
+# Development environment
+.env
+.env.local
+.env.development
+.env.production
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.sublime-*
+*.iml
+
+# OS related
+.DS_Store
+Thumbs.db
