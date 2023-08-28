@@ -1,105 +1,98 @@
-# Koa TS CRUD Server
+# Koa TypeScript CRUD Server
 
-A simple RESTful API built using Koa and TypeScript for managing books.
+A TypeScript-based REST API using the Koa framework, providing CRUD operations on a dataset of books.
 
-## Features
+## Table of Contents
 
-- Basic CRUD operations on books.
-- TypeScript interfaces for type safety.
-- Middleware support using Koa.
+1. [Project Overview](#project-overview)
+2. [Installation and Setup](#installation-and-setup)
+3. [File Structure and Descriptions](#file-structure-and-descriptions)
+4. [Running the Server](#running-the-server)
+5. [Endpoints](#endpoints)
 
-## Project Structure
+## Project Overview
 
-```
-src/
-│
-├── models/
-│ └── book.ts # Contains the Book interface and sample books data.
-│
-├── routes/
-│ └── bookRoutes.ts # Contains the routes for CRUD operations on books.
-│
-└── server.ts # The main server file to start the Koa application.
-```
+This project demonstrates the creation of a simple Koa server using TypeScript. The primary feature is to perform CRUD operations on a collection of books.
 
-## Setup
+## Installation and Setup
 
-1. **Install Dependencies**
+1. **Clone the Repository**:
 
-```
-npm install
+   ```bash
+   git clone https://github.com/dattgoswami/book-api-koa-ts
+   ```
 
-```
+2. **Navigate to the Directory**:
 
-2. **Run the server**
+   ```bash
+   cd book-api-koa-ts
+   ```
 
-```
+3. **Install Dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+## File Structure and Descriptions
+
+- **src/models/book.ts**: Contains the `Book` data model and an initial array of book objects.
+- **src/routes/bookRoutes.ts**: This file defines routes and handlers for CRUD operations on the book dataset.
+- **src/server.ts**: This file has the main server configuration, middlewares, and initializes the Koa server.
+
+## Running the Server
+
+To start the server, execute:
+
+```bash
 npm start
 ```
 
-This will start the server on `http://localhost:3000`.
+The server should now be live at `http://localhost:3000`.
 
-## API Endpoints
+## Endpoints
 
-- **Get all books**
+1. **Get All Books**:
 
-```
-GET /books
-```
+   - Method: `GET`
+   - Endpoint: `/books`
 
-- **Get a specific book by ID**
+2. **Retrieve a Specific Book by ID**:
 
-```
-GET /books/:id
-```
+   - Method: `GET`
+   - Endpoint: `/books/:id`
 
-- **Add a new book**
+3. **Insert a New Book**:
 
-```
-POST /books
-```
+   - Method: `POST`
+   - Endpoint: `/books`
+   - Body:
+     ```json
+     {
+       "id": <number>,
+       "title": "<title>",
+       "author": "<author_name>",
+       "genre": "<genre>",
+       "publishedYear": <year>
+     }
+     ```
 
-Body example:
+4. **Update a Book by ID**:
 
-```json
-{
-  "id": 6,
-  "title": "New Book",
-  "author": "Author Name",
-  "genre": "Genre",
-  "publishedYear": 2023
-}
-```
+   - Method: `PUT`
+   - Endpoint: `/books/:id`
+   - Body:
+     ```json
+     {
+       "id": <number>,
+       "title": "<updated_title>",
+       "author": "<updated_author_name>",
+       "genre": "<updated_genre>",
+       "publishedYear": <updated_year>
+     }
+     ```
 
-- **Update a book by ID**
+5. **Remove a Book by ID**:
 
-  ```
-  PUT /books/:id
-  ```
-
-  Body example:
-
-  ```json
-  {
-    "id": 6,
-    "title": "Updated Book",
-    "author": "Updated Author",
-    "genre": "Updated Genre",
-    "publishedYear": 2024
-  }
-  ```
-
-- **Delete a book by ID**
-  ```
-  DELETE /books/:id
-  ```
-
-## Technologies Used
-
-- [Koa](https://koajs.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [koa-bodyparser](https://www.npmjs.com/package/koa-bodyparser)
-
-## Contributing
-
-Feel free to fork this repository, make changes, and submit pull requests. If you have any questions, open an issue or reach out directly.
+   - Method: `DELETE`
+   - Endpoint: `/books/:id`
